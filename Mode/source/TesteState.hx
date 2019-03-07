@@ -32,7 +32,7 @@ class TesteState extends FlxState {
         _txt.y = 100;
         _txt.x = 100;
         _txt.angle = 60;
-        _txt.text = "Hello World";
+        _txt.text = "Joguinhos legais";
 
         _cloud = new FlxSprite();
         add(_cloud);
@@ -57,8 +57,8 @@ class TesteState extends FlxState {
         super.create();
     }
     override public function update(elapsed:Float):Void{
-        _txt.angle += 2;
-        _sol.angle += 400;
-        _sol2.angle += 400;
+        _txt.angle += 5;
+        _sol.angle += 800;
+        _sol2.angle += 800;
     }
 }

@@ -1,0 +1,32 @@
+-main ApplicationMain 
+-cp /home/aluno-uffs/haxelib/flixel/4,6,0
+-D flixel=4.6.0
+--macro openfl._internal.macros.ExtraParams.include()
+-cp /home/aluno-uffs/haxelib/openfl/8,8,0/src
+-D openfl=8.8.0
+--macro lime._internal.macros.DefineMacro.run()
+-cp /home/aluno-uffs/haxelib/lime/7,2,1/src
+-D lime=7.2.1
+--macro keep('IntIterator')
+-cp /home/aluno-uffs/haxelib/hscript/2,3,0
+-D hscript=2.3.0
+-cp source
+-cp /home/aluno-uffs/haxelib/openfl/8,8,0/externs/flash
+-D native-trace
+-D FLX_RECORD
+-D tools=7.2.1
+-D flash-use-stage
+-D no-compilation
+-D openfl-flash
+-D fdb
+-D openfl-disable-handle-error
+-D web
+--macro flixel.system.macros.FlxDefines.run()
+--connect
+6000
+-cp export/flash
+-swf-lib obj/assets.swf
+-swf-version 11.8
+-swf export/flash/bin/Mode.swf
+-cp export/flash/haxe
+-debug
