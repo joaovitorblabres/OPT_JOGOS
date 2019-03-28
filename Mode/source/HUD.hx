@@ -12,5 +12,4 @@ class HUD extends FlxGroup{
         add(_score);
         
     }
-
 }
