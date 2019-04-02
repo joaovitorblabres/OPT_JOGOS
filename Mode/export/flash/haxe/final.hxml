@@ -15,15 +15,13 @@
 -D native-trace
 -D FLX_RECORD
 -D tools=7.2.1
+-D FLX_NO_DEBUG
 -D flash-use-stage
 -D no-compilation
+-D NAPE_RELEASE_BUILD
 -D openfl-flash
--D fdb
--D openfl-disable-handle-error
 -D web
 --macro flixel.system.macros.FlxDefines.run()
---connect
-6000
 -cp export/flash
 -swf-lib obj/assets.swf
 -swf-version 11.8
