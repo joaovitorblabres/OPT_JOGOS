@@ -10,10 +10,8 @@
 --macro keep('IntIterator')
 -cp /home/aluno-uffs/haxelib/hscript/2,3,0
 -D hscript=2.3.0
--cp /home/aluno-uffs/haxelib/flixel-addons/2,7,3
--D flixel-addons=2.7.3
 -cp source
--D FLX_NO_MOUSE
+-D FLX_RECORD
 -D FLX_NO_GAMEPAD
 -D tools=7.2.1
 -D lime-canvas

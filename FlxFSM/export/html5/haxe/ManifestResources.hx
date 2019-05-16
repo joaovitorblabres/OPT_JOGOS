@@ -68,7 +68,7 @@ import sys.FileSystem;
 
 		#else
 
-		data = '{"name":null,"assets":"aoy4:pathy18:assets%2Fslime.pngy4:sizei1477y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y18:assets%2Ftiles.pngR2i1033R3R4R5R7R6tgoR0y20:assets%2Fpowerup.pngR2i1051R3R4R5R8R6tgoR2i39706R3y5:MUSICR5y28:flixel%2Fsounds%2Fflixel.mp3y9:pathGroupaR10y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR2i2114R3R9R5y26:flixel%2Fsounds%2Fbeep.mp3R11aR13y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR2i5794R3y5:SOUNDR5R14R11aR13R14hgoR2i33629R3R15R5R12R11aR10R12hgoR2i15744R3y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR5y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR2i29724R3R16R17y36:__ASSET__flixel_fonts_monsterrat_ttfR5y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR0y33:flixel%2Fimages%2Fui%2Fbutton.pngR2i519R3R4R5R22R6tgoR0y36:flixel%2Fimages%2Flogo%2Fdefault.pngR2i3280R3R4R5R23R6tgh","rootPath":null,"version":2,"libraryArgs":[],"libraryType":null}';
+		data = '{"name":null,"assets":"aoy4:sizei39706y4:typey5:MUSICy2:idy28:flixel%2Fsounds%2Fflixel.mp3y9:pathGroupaR4y28:flixel%2Fsounds%2Fflixel.ogghy7:preloadtgoR0i2114R1R2R3y26:flixel%2Fsounds%2Fbeep.mp3R5aR8y26:flixel%2Fsounds%2Fbeep.ogghR7tgoR0i5794R1y5:SOUNDR3R9R5aR8R9hgoR0i33629R1R10R3R6R5aR4R6hgoR0i15744R1y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR3y30:flixel%2Ffonts%2Fnokiafc22.ttfR7tgoR0i29724R1R11R12y36:__ASSET__flixel_fonts_monsterrat_ttfR3y31:flixel%2Ffonts%2Fmonsterrat.ttfR7tgoy4:pathy33:flixel%2Fimages%2Fui%2Fbutton.pngR0i519R1y5:IMAGER3R18R7tgoR17y36:flixel%2Fimages%2Flogo%2Fdefault.pngR0i3280R1R19R3R20R7tgh","rootPath":null,"version":2,"libraryArgs":[],"libraryType":null}';
 		manifest = AssetManifest.parse (data, rootPath);
 		library = AssetLibrary.fromManifest (manifest);
 		Assets.registerLibrary ("default", library);
@@ -96,9 +96,6 @@ null
 #if !display
 #if flash
 
-@:keep @:bind #if display private #end class __ASSET__assets_slime_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep @:bind #if display private #end class __ASSET__assets_tiles_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep @:bind #if display private #end class __ASSET__assets_powerup_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
@@ -112,9 +109,6 @@ null
 
 #elseif (desktop || cpp)
 
-@:keep @:image("assets/slime.png") #if display private #end class __ASSET__assets_slime_png extends lime.graphics.Image {}
-@:keep @:image("assets/tiles.png") #if display private #end class __ASSET__assets_tiles_png extends lime.graphics.Image {}
-@:keep @:image("assets/powerup.png") #if display private #end class __ASSET__assets_powerup_png extends lime.graphics.Image {}
 @:keep @:file("/home/aluno-uffs/haxelib/flixel/4,6,0/assets/sounds/flixel.mp3") #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends haxe.io.Bytes {}
 @:keep @:file("/home/aluno-uffs/haxelib/flixel/4,6,0/assets/sounds/beep.mp3") #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends haxe.io.Bytes {}
 @:keep @:file("/home/aluno-uffs/haxelib/flixel/4,6,0/assets/sounds/beep.ogg") #if display private #end class __ASSET__flixel_sounds_beep_ogg extends haxe.io.Bytes {}
