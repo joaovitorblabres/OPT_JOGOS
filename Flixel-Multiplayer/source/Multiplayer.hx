@@ -1,11 +1,21 @@
 package;
 
+import networking.Network;
+import networking.sessions.Session;
+import networking.utils.NetworkEvent;
+import networking.utils.NetworkMode;
+import openfl.Assets;
+import openfl.display.Bitmap;
+import openfl.display.Sprite;
+import openfl.Lib;
+import openfl.events.MouseEvent;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.input.keyboard.FlxKey;
 
 class Multiplayer extends FlxSprite{
     // Ind 0 = OP
+    public static inline var IP_SERVIDOR:String = "127.0.0.1";
     public static inline var OP_NEW_PLAYER = 'n';
     public static inline var OP_MOVE = 'm';  // [op, p id, p x, p y, p velocity x, p velocity y, p acceleration x, p acceleartion y]
     public static inline var OP_SHOOT = 's';  // [op, player id, player x, player y]
@@ -19,8 +29,27 @@ class Multiplayer extends FlxSprite{
 
     public function new(){
         super();
-
+        criaCliente();
         _playerID = -1;
+    }
+
+    private function criaCliente():Void{
+        var client = Network.registerSession(NetworkMode.CLIENT, {
+            ip: IP_SERVIDOR,
+            port: 8888,
+            flash_policy_file_url: 'http://' + IP_SERVIDOR + ':9999/crossdomain.xml'
+        });
+
+        client.addEventListener(NetworkEvent.MESSAGE_RECEIVED, function(event: NetworkEvent) {
+            FlxG.log.add("AEOU");
+        });
+        client.start();
+        /*
+        // Fetch the current session (first one)
+        var session = Network.sessions[0];
+        session.send({ x: event.localX - cube.width * 0.5, y: event.localY - cube.height * 0.5 });
+        */
+
     }
 
     public function sendMove(p:Player):Void{
@@ -53,7 +82,11 @@ class Multiplayer extends FlxSprite{
     }
 
     public function send(msg: Array<Any>):Void{
-        onMessage(msg);
+        //onMessage(msg);
+        var session = Network.sessions[0];
+        session.send({
+            msg;    
+        });
     }
 
     function verifySender(inID: Int): Bool{
@@ -182,6 +215,7 @@ class Multiplayer extends FlxSprite{
 
         if(_cont >= 3){
             _cont = 0;
+            /*
             send([OP_MOVE, 1, 
             FlxG.random.int(0, Std.int(FlxG.width / 2)), FlxG.random.int(0, Std.int(FlxG.height / 2)), 
             FlxG.random.float(-100, 100), FlxG.random.float(-100, 100)]);
@@ -204,6 +238,7 @@ class Multiplayer extends FlxSprite{
             send([OP_MORREU, 2, 100, 150]);
             send([OP_MORREU, 3, 200, 150]);
             send([OP_MORREU, 4, 150, 150]);
+            */
         }
     }
 }
