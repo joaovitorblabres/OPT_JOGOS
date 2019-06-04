@@ -22,6 +22,7 @@ import openfl.events.MouseEvent;
  * @author Daniel Herzog
  */
 class Server extends Sprite {
+    var _ids = 0;
     /**
     * Create the main object container.
     */
@@ -41,17 +42,13 @@ class Server extends Sprite {
         // When a client is connected...
         server.addEventListener(NetworkEvent.CONNECTED, function(event: NetworkEvent) {
             // Send the current position of the cube.
-            event.client.send({
-                x: 10
-            });
+            event.client.send([]);
         });
 
         // When recieving a message from a client...
         server.addEventListener(NetworkEvent.MESSAGE_RECEIVED, function(event: NetworkEvent) {
             // ... and broadcast the location to all clients.
-            server.send({
-                x: 12
-            });
+            server.send(event.data);
         });
 
         // ... and run it!

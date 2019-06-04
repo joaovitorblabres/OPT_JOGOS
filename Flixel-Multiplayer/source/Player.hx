@@ -7,7 +7,7 @@ import flixel.input.keyboard.FlxKey;
 class Player extends FlxSprite{
     static inline var speed = 35;
 
-    public var pID: Int;
+    public var pID: String;
     public var simulated: Bool;
     public var lastTimeActive: Float;
 
@@ -17,7 +17,7 @@ class Player extends FlxSprite{
     var _rightKey: FlxKey;
     var _fireKey: FlxKey;
 
-    public function new(id:Int, keys:Array<FlxKey> = null){
+    public function new(id:String, keys:Array<FlxKey> = null){
         super();
         pID = id;
 
